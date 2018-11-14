@@ -4,14 +4,14 @@ const cors = require('cors')({ origin: true });
 
 // Make sure to create a keyfile (if on Google Cloud Platform)
 const config = {
-	projectId: 'google-project-id',
-	keyFilename: './google-project-id.json'
+	projectId: 'pay-to-win-be',
+	keyFilename: './pay-to-win-be.json'
 };
 
-const someFunction = require('./functions/someFunction');
+const payment = require('./functions/payment');
 
-exports.someFunction = functions.https.onRequest((req, res) => {
+exports.payment = functions.https.onRequest((req, res) => {
 	cors(req, res, function() {
-		someFunction.handler(req, res);
+		payment.handler(req, res);
 	});
 });
