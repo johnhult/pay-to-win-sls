@@ -1,6 +1,6 @@
 const functions = require('firebase-functions');
-const stripe = require("stripe")(functions.config().stripe.token);
-// const stripe = require("stripe")(functions.config().stripe.live);
+// const stripe = require("stripe")(functions.config().stripe.token);
+const stripe = require("stripe")(functions.config().stripe.live);
 
 exports.handler = async function(req, res) {
 	const body = typeof req.body === 'object' ? req.body : JSON.parse(req.body);
